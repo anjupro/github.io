@@ -82,7 +82,7 @@ h1 {
 }
 
 .intro p {
-  margin: 0;
+  margin: 0 auto;
   max-width: 680px;
   font-size: 1.05rem;
   color: #d4d4d8;
