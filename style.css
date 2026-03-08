@@ -66,6 +66,10 @@ h1 {
   letter-spacing: -0.04em;
 }
 
+.section h1 {
+  text-align: center;
+}
+
 .tagline {
   margin: 14px 0 0;
   font-size: 1.05rem;
