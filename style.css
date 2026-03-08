@@ -20,7 +20,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Upgraded to the native premium system font stack */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -34,10 +35,11 @@ img {
 a {
   color: var(--text);
   text-decoration: none;
+  transition: opacity 0.2s ease; /* Added smooth fade */
 }
 
 a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .site {
@@ -68,13 +70,15 @@ h1 {
 
 .section h1 {
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .tagline {
-  margin: 14px 0 0;
-  font-size: 1.05rem;
+  margin: 14px auto 0;
+  font-size: 1.1rem;
   color: var(--muted);
   max-width: 560px;
+  text-align: center;
 }
 
 .section {
@@ -83,21 +87,32 @@ h1 {
 
 .intro {
   border-top: 1px solid var(--line);
+  padding-top: 40px;
 }
 
-.intro p {
-  margin: 0 auto;
-  max-width: 680px;
+/* Updated typography spacing for long-form text (like Privacy Policy) */
+.section p {
+  margin: 0 0 16px;
   font-size: 1.05rem;
   color: #d4d4d8;
-  text-align: center;
+  text-align: left; /* Ensures legal text is readable */
+}
+
+.section ul {
+  margin: 0 0 24px;
+  padding-left: 20px;
+  color: #d4d4d8;
+}
+
+.section li {
+  margin-bottom: 8px;
 }
 
 h2 {
-  margin: 0 0 20px;
-  font-size: 1rem;
+  margin: 32px 0 16px;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -110,6 +125,12 @@ h2 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 20px;
+  transition: transform 0.2s ease, border-color 0.2s ease; /* Added tactile interaction */
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: #52525b;
 }
 
 .project-image {
@@ -126,13 +147,14 @@ h2 {
 
 .project-text h3 {
   margin: 0 0 8px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   letter-spacing: -0.02em;
 }
 
 .project-text p {
   margin: 0;
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .footer {
@@ -154,6 +176,7 @@ h2 {
   color: #666;
 }
 
+/* Consolidated Media Queries */
 @media (max-width: 640px) {
   .hero {
     min-height: 44vh;
@@ -163,18 +186,6 @@ h2 {
   .logo {
     width: 88px;
   }
-
-  .project-text {
-    padding: 18px;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-}
-
-@media (max-width: 640px) {
 
   .project-card {
     flex-direction: column;
@@ -186,4 +197,12 @@ h2 {
     height: auto;
   }
 
+  .project-text {
+    padding: 18px 0 0 0;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
