@@ -181,34 +181,55 @@ h2 {
   color: #666;
 }
 
-/* Consolidated Media Queries */
+/* --- Ultra-Polished Mobile View --- */
 @media (max-width: 640px) {
   .hero {
-    min-height: 44vh;
-    padding: 56px 0 36px;
+    min-height: auto;
+    padding: 48px 16px 32px; /* Better breathing room on small screens */
   }
 
   .logo {
-    width: 88px;
+    width: 140px; /* Slightly smaller so it doesn't dominate the phone screen */
+  }
+
+  /* Centers your section titles on mobile for a cleaner look */
+  h1, h2, .project-text h3 {
+    text-align: center; 
+  }
+
+  .section {
+    padding: 32px 16px; /* Adds safe area margins to the sides of the phone */
   }
 
   .project-card {
     flex-direction: column;
     text-align: center;
+    padding: 24px 16px; /* More balanced internal spacing */
   }
 
   .project-image {
     width: 100%;
     height: auto;
+    aspect-ratio: 16/9; /* Ensures your screenshot doesn't stretch */
   }
 
   .project-text {
-    padding: 18px 0 0 0;
+    padding: 20px 0 0 0;
+  }
+
+  .app-store-badge {
+    margin: 20px auto 0; /* Perfectly centers the Apple badge on mobile */
+    display: block; 
   }
 
   .footer {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column; /* Stacks the footer links neatly */
+    gap: 16px;
+    padding: 32px 16px 48px;
+  }
+
+  .footer-divider {
+    display: none; /* Hides the little dot since the links are stacked now */
   }
 }
 
